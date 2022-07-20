@@ -1,4 +1,6 @@
 from django.urls import path
+from . import views
+
 
 from recipes.views import (
     create_recipe,
@@ -7,6 +9,7 @@ from recipes.views import (
     show_recipes,
 )
 
+# URLConf
 urlpatterns = [
     path("", show_recipes, name="recipes_list"),
     path("<int:pk>/", show_recipe, name="recipe_detail"),
